@@ -1,5 +1,13 @@
 from django.shortcuts import render
+from programa.models import Item
 
 def index(request):
-	render(request, 'index.html')
+
+	items = Item.objects.all()
+
+	return render(request,'index.html',{'items':items})
+
+def adicionar(request):
+	return render(request,'adicionar.html')
+	
 
