@@ -1,13 +1,12 @@
 <html>
 <body>
 <h1>SISTEMA MENU</h1>
-<a href="#">CADASTRAR</a>
+<a href="/adicionar/">CADASTRAR</a>
 
 <br/><br/>
 
 {% for item in items %}
-	{{item.nome}} - R$ {{item.valor}}
-{%endfor%}
+<a href="/editar/{{ item.pk }}/">	{{item.nome}} </a> - R$ {{item.valor}} <br> {%endfor%}
 
 </body>
 </html>

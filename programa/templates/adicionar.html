@@ -3,10 +3,23 @@
 <h1>SISTEMA MENU</h1>
 
 <br/><br/>
+<form action="/salvar/" method="POST">
 
-{% for item in items %}
-	{{item.nome}} - R$ {{item.valor}}
-{%endfor%}
+{%csrf_token%}
+
+	<label > Adicionar Item </label>
+	<br> 
+	<label>Nome</label>
+	<input type="text" name="nome" value="{{ item.nome}}">
+	<br>
+	<label>Valor</label>
+	<input type="text" name="valor" value="{{ item.valor}}">
+	<br>
+	<button type="submit" name="salvar" > Salvar </button>
+	<input type="hidden" name="codigo" value="{{ item.pk}}">
+
+
+</form>
 
 </body>
 </html>
